@@ -1,0 +1,8 @@
+CREATE table sub_categories (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  category_id BIGINT NOT NULL,
+  name VARCHAR(50),
+  slug VARCHAR(50) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE CASCADE
+);

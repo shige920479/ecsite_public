@@ -1,0 +1,9 @@
+CREATE table stocks (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  item_id BIGINT NOT NULL,
+  stock_diff INT NOT NULL,
+  reason VARCHAR(100),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(item_id) REFERENCES items(id) ON DELETE CASCADE,
+  CHECK (stock_diff <> 0)
+);

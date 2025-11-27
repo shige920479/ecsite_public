@@ -1,0 +1,7 @@
+CREATE table temporary_users (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  email VARCHAR(50) NOT NULL,
+  verification_code VARCHAR(10) NOT NULL,
+  expires_at DATETIME NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
